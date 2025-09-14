@@ -73,3 +73,29 @@ App
         │
         ▼
   ⚡ Возврат в App → handlePersonSelect(person)
+
+
+
+
+
+
+//2. Пример: плавное появление блока (CSS + useEffect)
+import { useState, useEffect } from "react";
+import "./styles.css"; // подключим стили
+
+export default function FadeInBox() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // запускаем анимацию через 0.5 сек после монтирования
+    const timer = setTimeout(() => setVisible(true), 500);
+    return () => clearTimeout(timer); // очистка таймера
+  }, []);
+
+  return (
+    <div>
+      <h2>Пример анимации появления</h2>
+      <div className={`box ${visible ? "show" : ""}`} />
+    </div>
+  );
+}
