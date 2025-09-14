@@ -99,3 +99,26 @@ export default function FadeInBox() {
     </div>
   );
 }
+
+
+//Пример useEffect с изменением ширины окна и подпиской и отпиской 
+import { useEffect, useState } from 'react';
+
+function WindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // cleanup: отписка при размонтировании или перед повторным запуском эффекта
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // пустой массив — подписка делается один раз при монтировании
+
+  return <div>Ширина окна: {width}px</div>;
+}
