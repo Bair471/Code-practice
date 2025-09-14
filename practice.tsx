@@ -40,3 +40,36 @@ function PersonRow({ person }) {
 
 //передача по отдельности
 <PersonRow name={person.name} age={person.age} habits={person.habits} />
+
+
+
+
+
+//Схема потока данных
+
+App
+  ├── persons = [{id:1, name:"Иван"}, {id:2, name:"Мария"}]
+  └── handlePersonSelect(person)  ← (главная функция)
+
+        │
+        ▼
+
+ PersonTable
+   получает:
+     - persons (массив людей)
+     - onPersonSelect (функция)
+   ↓
+   для каждого person создаёт PersonRow
+
+        │
+        ▼
+
+ PersonRow
+   получает:
+     - person (один объект: {id, name, age})
+     - onSelect (функция)
+
+   когда клик → вызывает onSelect(person)
+        │
+        ▼
+  ⚡ Возврат в App → handlePersonSelect(person)
