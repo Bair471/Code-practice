@@ -31,3 +31,47 @@ function UserCard({ user }) {
     </div>
   );
 }
+
+
+
+
+
+// Типы примитивных данных в Javascript 
+
+string — строки
+
+let name = "Андрей";
+
+
+number — числа (целые и с плавающей точкой)
+
+let age = 25;
+let pi = 3.14;
+
+
+bigint — очень большие целые числа
+
+let big = 1234567890123456789012345678901234567890n;
+
+
+boolean — логический тип (true/false)
+
+let isAdmin = true;
+let isOnline = false;
+
+
+undefined — значение "не определено" (переменная есть, но значения нет)
+
+let x;
+console.log(x); // undefined
+
+
+null — "пустое" значение (осознанное отсутствие данных)
+
+let empty = null;
+
+
+symbol — уникальные идентификаторы
+
+let id = Symbol("id");
+
