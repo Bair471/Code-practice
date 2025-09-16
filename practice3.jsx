@@ -17,6 +17,9 @@ const handleCloseModal = () => {
       />
     </>
 
+
+// В функции handleSave происходит вызов onSave(). Функция показывает что сохранение прошло успешно и закрывает окно и перезагружает (обновляет новыми данными)
+// Я наблюдаю то что onSave() и onClose() вызывают одно и тоже в другом компоненте и сюда попадают как пропсы выше: export default function PersonModal({ person, onClose, onSave })
 const handleSave = async () => {
     try {
       if (formData.id && formData.id !== 0) {
@@ -38,3 +41,4 @@ const handleSave = async () => {
       console.error("Ошибка сохранения:", err);
     }
   };
+
