@@ -142,3 +142,12 @@ const onDelete = async (id: number) => {
     const handleAdd = () => {
       setSelectedPerson({ id: null, name: "", age: "" }); 
     };
+
+const handleCloseModal = () => {
+      setSelectedPerson(null);
+
+      fetch("http://localhost:8000/persons")
+      .then((res) => res.json())
+      .then((data) => setPersons(data))
+      .catch((err) => console.error('Ошибка', err));
+    }; 
