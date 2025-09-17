@@ -122,3 +122,15 @@ function WindowWidth() {
 
   return <div>Ширина окна: {width}px</div>;
 }
+
+
+
+
+// Практика написания кода по памяти.
+
+const onDelete = async (id: number) => {
+      await fetch(`http://localhost:8000/persons/${id}`, {
+        method: 'DELETE',
+      });
+      setPersons((prev) => prev.filter((person) => person.id !== id));
+    };
