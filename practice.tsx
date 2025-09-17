@@ -134,3 +134,11 @@ const onDelete = async (id: number) => {
       });
       setPersons((prev) => prev.filter((person) => person.id !== id));
     };
+
+ const handleEdit = (person) => {
+      setSelectedPerson(person);
+    };
+// Тут вроде можно и id: 0, name: "", age: 0 НАДО УТОЧНИТЬ. НО ГПТ СКАЗАЛ МОЖНО 
+    const handleAdd = () => {
+      setSelectedPerson({ id: null, name: "", age: "" }); 
+    };
