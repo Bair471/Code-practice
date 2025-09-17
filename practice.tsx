@@ -151,3 +151,40 @@ const handleCloseModal = () => {
       .then((data) => setPersons(data))
       .catch((err) => console.error('Ошибка', err));
     }; 
+// ТУТ В КОНЦЕ МОЖНО УПРОСТИТЬ ВЫЗОВ onSave и onClose потому что вызывают одну и туже функцию в модалке
+ {persons.map((person) => (
+            <TableRow key={person.id}>
+              <TableCell>{person.id}</TableCell>
+              <TableCell>{person.name}</TableCell>
+              <TableCell>{person.age}</TableCell>
+              <TableCell>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="small"
+                  onClick={() => handleEdit(person)}
+                  sx={{ mr: 1 }}
+                >
+                  Редактировать
+                </Button>
+                <Button
+                  variant="outlined"
+                  color="error"
+                  size="small"
+                  onClick={() => onDelete(person.id)}
+                >
+                  Удалить
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+
+      <PersonModal
+        person={selectedPerson}
+        onSave={handleCloseModal}
+        onClose={handleCloseModal}
+      />
+    </>
+      ); 
