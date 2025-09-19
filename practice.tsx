@@ -150,6 +150,13 @@ id: null,
 id: "",
 id: 0 
 
+if (person.id === null) {
+  // создаём новую запись
+} else {
+  // обновляем существующую
+}
+
+
 const handleCloseModal = () => {
       setSelectedPerson(null);
 
