@@ -143,6 +143,13 @@ const onDelete = async (id: number) => {
       setSelectedPerson({ id: null, name: "", age: "" }); 
     };
 
+
+// РАЗНИЦА id: ""(ЭТО ПУСТАЯ СТРОКА БУДЕТ В МОДАЛКЕ), id: null ТОЖЕ ПУСТАЯ СТРОКА, НО ЭТО ДОПОЛНИТЕЛЬНО ПОПКАЗЫВАЕТ ЧТО ЭТО БУДЕТ НОВЫЙ ОБЪЕКТ, КОТОРОГО ЕЩЕ НЕ СУЩЕСТВУЕТ.
+// id: 0( ИЗНАЧАЛЬНО В СТРОКЕ БУДЕТ 0 В МОДАЛЬНОМ ОКНЕ). 
+id: null,
+id: "",
+id: 0 
+
 const handleCloseModal = () => {
       setSelectedPerson(null);
 
@@ -188,3 +195,4 @@ const handleCloseModal = () => {
       />
     </>
       ); 
+
