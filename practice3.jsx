@@ -54,3 +54,50 @@ const handleSave = async () => {
     }
   };
 
+
+// Hosting
+
+Hosting это вызов функции до ее написания. Только тип function. var и let так не работают. 
+
+sayHi();
+
+function sayHi() {
+console.log("Привет!");
+}
+
+1. `string` — строки 
+
+let name = “Bair”;
+
+let greeting = “hi”;
+
+1. `number` — числа. Любые числа (целые или с плавающей точкой).
+
+let age = 25;
+let pi = 3.14;
+
+1. `bigint` — большие числа Для очень больших чисел, которые не помещаются в обычный `number`.
+
+let huge = 123456789012345678901234567890n; // обязательно с n на конце
+
+4. `boolean` — логический тип `true` или `false`.
+
+let isStudent = true;
+let hasLicense = false;
+
+1. `undefined` — неопределённое значение. Переменная объявлена, но не получила свое значение
+
+let x;
+console.log(x); // undefined
+
+1. `null` — пустое значение
+
+let person = null;
+
+### 7. `symbol` — уникальный идентификатор
+
+Используется для создания уникальных ключей объектов.
+
+let id = Symbol("id");
+let id2 = Symbol("id");
+console.log(id === id2); // false
