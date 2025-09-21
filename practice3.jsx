@@ -8,7 +8,8 @@ useEffect(() => {
     }
   }, [person]);
 
-
+// Prev подставляется вместо массива persons
+setPersons((prev) => prev.filter((person) => person.id !== id));
 
 //handleCloseModal не только закрывает окно, но и перезагружает его (новыми данными)
 
