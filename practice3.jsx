@@ -76,8 +76,22 @@ const handleSave = async () => {
       console.error("Ошибка сохранения:", err);
     }
   };
+// Разные написания через await и .then
+const onDelete = async (id: number) => {
+      await fetch(`http://localhost:8000/persons/${id}`, {
+        method: 'DELETE',
+      });
+      setPersons((prev) => prev.filter((person) => person.id !== id));
+    };
 
-
+ function onDelete(id) {
+        fetch(`http://localhost:8000/persons/${id}`, {
+            method: 'DELETE',
+        })
+        .then(() => {
+            setPersons(prev => prev.filter(person => person.id !== id))
+        })
+    }
 // Hosting
 
 Hosting это вызов функции до ее написания. Только тип function. var и let так не работают. 
