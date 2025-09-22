@@ -139,3 +139,43 @@ let person = null;
 let id = Symbol("id");
 let id2 = Symbol("id");
 console.log(id === id2); // false
+
+
+
+// ЗАДАНИЯ
+
+var a = 1;
+let b = 2;
+const c = 3;
+console.log(a, b, c);
+
+В КОНСОЛИ ВЫВЕДЕТ 1,2,3 а изменить можно только var a и let b. const c это константа она не изменяема.
+
+
+    
+console.log(x);
+var x = 5;
+console.log(y);
+let y = 10;
+
+Первый console.log(x); → undefined
+
+Второй console.log(y); → программа падает с ошибкой ReferenceError
+
+
+
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  }
+}
+
+const counter = outer();
+console.log(counter());
+console.log(counter());
+
+выведет в консоли 1 затем 2;
+
+
