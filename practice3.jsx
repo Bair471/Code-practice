@@ -179,3 +179,13 @@ console.log(counter());
 выведет в консоли 1 затем 2;
 
 
+
+const numbers = [1, 2, 3 ,4, 5];
+const doubled = numbers.map(num => num * 2);
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(doubled, evens);
+
+в первом методе все умножится на 2 и получится [2, 4, 6, 8, 10]
+во втором методе все вернется в изначальные значения, но будет [2, 4] из-за условия num % 2 === 0.
+
+
