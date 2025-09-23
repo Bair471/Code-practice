@@ -219,3 +219,13 @@ console.log(null === undefined);
 
 // Два типа сравнения строгое === и не строгое ==. 
 // Результаты будут true, false, true, false.
+
+
+
+document.getElementById('myButton').addEventListener('click',f
+unction() {
+console.log('Button clicked!');
+});
+
+// работает по тому что мы выбрали кнопку через getElementById а затем повесили на нее слушатель клик и написали функцию(),
+//которая просто пока вызывает в консоли надпись button clicked
