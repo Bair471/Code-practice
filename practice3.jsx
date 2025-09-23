@@ -229,3 +229,16 @@ console.log('Button clicked!');
 
 // работает по тому что мы выбрали кнопку через getElementById а затем повесили на нее слушатель клик и написали функцию(),
 //которая просто пока вызывает в консоли надпись button clicked
+
+
+
+const obj = {
+  name: 'John',
+  greet: function() {
+    console.log('Hello, ' + this.name);
+  }
+};
+
+const greetFunc = obj.greet;
+obj.greet();      // "Hello, John"
+greetFunc();      // "Hello, undefined" (или ошибка в strict mode)
