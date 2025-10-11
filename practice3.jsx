@@ -1,3 +1,36 @@
+const SPENDING_THRESHOLD = 200;
+const TAX_RATE = 0.08;
+const PHONE_PRICE = 99.99;
+const ACCESSORY_PRICE = 9.99;
+
+let bank_balance = 500;
+let amount = 0;
+
+function calculateTax(amount) {
+  return amount * TAX_RATE;
+}
+
+function formatAmount(amount) {
+  return "$" + amount.toFixed(2);
+}
+
+while (amount + PHONE_PRICE <= bank_balance) {
+  amount += PHONE_PRICE;
+  if (amount < SPENDING_THRESHOLD) {
+    amount += ACCESSORY_PRICE;
+  }
+}
+
+amount += calculateTax(amount);
+
+console.log("Ваша покупка: " + formatAmount(amount));
+
+if (amount > bank_balance) {
+  console.log("Вы не можете позволить себе эту покупку. :(");
+}
+
+
+
 //  В квадратных скобках [person] означает, что будет происходить монтирование при каждом изменении объекта person. Если скобки пустые, то монтирование будет происходить только один
 //  раз. Если скобок нету в конце, то будет происходить монитрование при каждом ререндеринге(ЧТО НЕ ПРАВИЛЬНО).
 useEffect(() => {
