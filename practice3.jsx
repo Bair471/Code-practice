@@ -1,3 +1,19 @@
+const TAX_RATE = 0.08;
+
+function calculateFinalPurchaseAmount(amt) {
+	// вычисляем новую сумму с налогом
+	amt = amt + (amt * TAX_RATE);
+
+	// возвращаем новую сумму
+	return amt;
+}
+
+var amount = 99.99;
+
+amount = calculateFinalPurchaseAmount( amount );
+
+console.log( amount.toFixed( 2 ) );		// "107.99"
+
 function outer() {
 	var a = 1;
 
